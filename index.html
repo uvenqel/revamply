@@ -9,12 +9,10 @@
   <meta name="format-detection" content="telephone=no">
   <link rel="canonical" href="https://verst.design/">
 
-  <!-- Предзагрузка критических ресурсов -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Website Revamp — редизайн сайтов с гарантией роста конверсии">
   <meta property="og:description" content="Редизайн сайтов, который повышает конверсию. Средний рост — 38%.">
@@ -22,11 +20,9 @@
   <meta property="og:url" content="https://verst.design/">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23ff5e3a'/%3E%3Ctext x='50' y='72' font-size='68' text-anchor='middle' fill='white' font-family='Arial, sans-serif'%3E✨%3C/text%3E%3C/svg%3E">
   <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23ff5e3a'/%3E%3Ctext x='50' y='72' font-size='68' text-anchor='middle' fill='white'%3E✨%3C/text%3E%3C/svg%3E">
 
-  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -37,6 +33,7 @@
     "telephone": "+7-999-999-99-99",
     "email": "privet@verst.design",
     "priceRange": "₽₽",
+
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Москва",
@@ -72,14 +69,13 @@
       --accent-hover: #e04a2a;
       --accent-light: #fff0ec;
       --shadow: 0 12px 30px rgba(0,0,0,0.05);
-      --shadow-hover: 0 20px 35px rgba(0,0,0,0.1);
+      --shadow-hover: 0 20px 35px rgba(255,94,58,0.15);
       --btn-primary-bg: #14141f;
       --btn-primary-text: #ffffff;
       --btn-outline-border: #14141f;
       --badge-bg: #fff0ec;
       --stat-bg: #f8f8fc;
       --star-color: #f5b342;
-      --logo-color: #0f0f17;
       --logo-gradient: linear-gradient(135deg, #0f0f17 0%, #1a1a2e 100%);
       --radius-sm: 12px;
       --radius-md: 20px;
@@ -88,11 +84,13 @@
       --radius-full: 60px;
       --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       --font-stack: 'Inter', system-ui, -apple-system, sans-serif;
+      --progress-track: #e4e4ea;
+      --progress-fill: #ff5e3a;
     }
 
     body.dark {
       --bg: #0f0f17;
-      --bg-card: #1a1a26;
+      --bg-card: #1e1e2c;
       --bg-glass: rgba(15,15,23,0.9);
       --bg-process: #1a1a28;
       --text: #e8e8f0;
@@ -104,13 +102,14 @@
       --accent-light: #2a1f1c;
       --btn-primary-bg: #ffffff;
       --btn-primary-text: #0f0f17;
-      --btn-outline-border: #ffffff;
+      --btn-outline-border: rgba(255,255,255,0.6);
       --badge-bg: #2a1f1c;
       --stat-bg: #1e1e2e;
-      --logo-color: #ffffff;
-      --logo-gradient: linear-gradient(135deg, #ffffff 0%, #e8e8f0 100%);
+      --logo-gradient: linear-gradient(135deg, #ffffff 0%, #ff6b4a 100%);
       --shadow: 0 12px 30px rgba(0,0,0,0.2);
-      --shadow-hover: 0 20px 35px rgba(0,0,0,0.3);
+      --shadow-hover: 0 20px 35px rgba(255,107,74,0.2);
+      --progress-track: #2a2a3a;
+      --progress-fill: #ff6b4a;
     }
 
     /* ===== Reset & Base ===== */
@@ -132,7 +131,6 @@
       padding-top: 100px;
     }
 
-    /* ===== Accessibility ===== */
     .skip-link {
       position: absolute;
       top: -100px;
@@ -155,11 +153,10 @@
     }
     :focus:not(:focus-visible) { outline: none; }
 
-    /* ===== Layout ===== */
     .site-wrapper { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
     .container { max-width: 1240px; margin: 0 auto; }
 
-    /* ===== Header & Navigation ===== */
+    /* ===== Header ===== */
     header {
       display: flex;
       justify-content: space-between;
@@ -196,15 +193,12 @@
       transition: opacity 0.2s;
     }
     .logo:hover { opacity: 0.85; }
-    /* Оранжевая иконка в логотипе */
     .logo-icon {
       color: #ff5e3a;
       font-size: 1.8rem;
       line-height: 1;
     }
-    body.dark .logo-icon {
-      color: #ff6b4a;
-    }
+    body.dark .logo-icon { color: #ff6b4a; }
 
     .nav-desktop { display: flex; gap: 20px; align-items: center; }
     .nav-desktop a { 
@@ -313,11 +307,11 @@
       color: var(--text);
       flex-shrink: 0;
     }
-    .theme-toggle:hover { background: var(--accent); border-color: var(--accent); transform: rotate(15deg); }
+    .theme-toggle:hover { background: var(--accent); border-color: var(--accent); transform: rotate(180deg); }
     .theme-toggle:hover svg { stroke: white; }
     .theme-toggle svg {
       width: 20px; height: 20px;
-      stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; transition: stroke 0.2s;
+      stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; transition: all 0.4s ease, d 0.4s ease, stroke 0.2s;
     }
 
     /* ===== Buttons ===== */
@@ -437,7 +431,6 @@
       animation: fadeInUp 0.5s 0.2s ease backwards;
     }
 
-    /* Упрощенная картинка До и После */
     .hero-before-after {
       width: 100%;
       aspect-ratio: 16/10;
@@ -473,6 +466,9 @@
       border-right: 2px dashed var(--border);
     }
     .before-label, .after-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -483,13 +479,21 @@
       color: var(--text);
       font-weight: 700;
     }
+    .before-label::before {
+      content: "😔";
+      font-size: 0.9rem;
+    }
     .after-label {
       background: var(--accent);
       color: white;
     }
+    .after-label::before {
+      content: "✨";
+      font-size: 0.9rem;
+    }
     .mockup-text {
       font-size: 0.9rem;
-      opacity: 0.7;
+      opacity: 0.85;
     }
     .hero-arrow {
       position: absolute;
@@ -507,9 +511,10 @@
       font-weight: bold;
       z-index: 2;
       box-shadow: 0 4px 12px rgba(255,94,58,0.3);
+      transition: transform 0.3s ease;
     }
+    .hero-arrow:hover { transform: translate(-50%, -50%) scale(1.1); }
 
-    /* Stats */
     .stats-container {
       display: flex;
       justify-content: space-around;
@@ -556,7 +561,13 @@
       transition: transform var(--transition);
     }
     .problem-card:hover svg { transform: rotate(-5deg) scale(1.1); }
-    .problem-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+    .problem-card h3 { 
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.2rem; 
+      margin-bottom: 10px; 
+    }
     .problem-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.55; }
 
     /* ===== Why Us Section ===== */
@@ -591,9 +602,29 @@
     }
     .benefit-card:hover::before { transform: scaleX(1); }
     .benefit-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
-    .benefit-number { font-size: 2.5rem; font-weight: 800; color: var(--accent); opacity: 0.2; margin-bottom: 16px; line-height: 1; }
-    .benefit-card h4 { font-size: 1.15rem; margin-bottom: 10px; }
-    .benefit-card p { color: var(--text-secondary); line-height: 1.55; font-size: 0.95rem; }
+    .benefit-number { 
+      font-size: 3rem; 
+      font-weight: 800; 
+      color: var(--accent); 
+      opacity: 0.15; 
+      margin-bottom: -10px; 
+      line-height: 1;
+      position: relative;
+      z-index: 1;
+    }
+    .benefit-card h4 { 
+      font-size: 1.15rem; 
+      margin-bottom: 10px; 
+      position: relative;
+      z-index: 2;
+    }
+    .benefit-card p { 
+      color: var(--text-secondary); 
+      line-height: 1.55; 
+      font-size: 0.95rem;
+      position: relative;
+      z-index: 2;
+    }
 
     /* ===== Case Showcase ===== */
     .case-showcase {
@@ -638,7 +669,6 @@
       white-space: nowrap;
     }
 
-    /* Case Mockup Placeholder */
     .case-mockup {
       width: 100%;
       aspect-ratio: 16/10;
@@ -648,6 +678,18 @@
       justify-content: center;
       color: var(--text-secondary);
       font-size: 0.85rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .case-mockup::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(255,94,58,0.05) 0%, transparent 50%);
+      z-index: 1;
     }
     body.dark .case-mockup { background: linear-gradient(135deg, #1a1a30 0%, #222238 100%); }
 
@@ -741,7 +783,8 @@
     .testimonial-author { 
       display: flex; 
       align-items: center; 
-      gap: 14px; 
+      gap: 14px;
+      margin-bottom: 12px;
     }
     .avatar { 
       width: 56px; 
@@ -762,13 +805,12 @@
     .testimonial-author small { color: var(--text-secondary); font-size: 0.8rem; }
     .testimonial-company { 
       display: inline-block;
-      margin-top: 12px;
       padding: 4px 12px;
       background: var(--stat-bg);
       border-radius: 20px;
       font-size: 0.8rem;
-      color: var(--text-secondary);
-      font-weight: 500;
+      color: var(--accent);
+      font-weight: 600;
     }
 
     /* ===== Pricing ===== */
@@ -795,9 +837,9 @@
     .price-card.featured { 
       border: 2px solid var(--accent);
       position: relative;
-      box-shadow: 0 15px 35px rgba(255,94,58,0.12);
+      box-shadow: 0 20px 35px rgba(255,94,58,0.2);
     }
-    .price-card.featured:hover { transform: translateY(-6px); }
+    .price-card.featured:hover { transform: translateY(-6px); box-shadow: 0 25px 45px rgba(255,94,58,0.25); }
     .price-card.featured::after {
       content: 'Рекомендуем';
       position: absolute;
@@ -873,6 +915,11 @@
     }
     .pricing-compare td:not(:first-child) { text-align: center; }
     .pricing-compare tr:hover td { background: var(--stat-bg); }
+    .pricing-compare tr:last-child td {
+      font-weight: 700;
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+    }
     .check-icon { color: var(--accent); font-weight: bold; }
     .dash-icon { color: var(--text-secondary); opacity: 0.4; }
 
@@ -892,7 +939,7 @@
       cursor: pointer;
       transition: border-color 0.3s, box-shadow 0.3s;
     }
-    .faq-item:hover { border-color: var(--accent); box-shadow: var(--shadow); }
+    .faq-item:hover { border-color: var(--accent); box-shadow: var(--shadow-hover); }
     .faq-item summary { 
       font-weight: 650; 
       font-size: 1.1rem; 
@@ -917,6 +964,10 @@
       transform: rotate(180deg);
     }
     .faq-item p { margin-top: 16px; color: var(--text-secondary); line-height: 1.55; }
+    .faq-item[open] {
+      border-color: var(--accent);
+      box-shadow: var(--shadow);
+    }
 
     /* ===== Contact Section ===== */
     .contact-section {
@@ -946,7 +997,7 @@
     /* ===== Footer ===== */
     footer { 
       border-top: 1px solid var(--border); 
-      padding: 32px 0; 
+      padding: 32px 0 60px; 
       display: flex; 
       flex-wrap: wrap; 
       justify-content: space-between; 
@@ -955,8 +1006,6 @@
       margin-top: 40px;
       font-size: 0.9rem;
       color: var(--text-secondary);
-      /* ОБЯЗАТЕЛЬНО ДОБАВЛЕННЫЙ ОТСТУП СНИЗУ */
-      padding-bottom: 120px; 
     }
     .footer-col { display: flex; flex-direction: column; gap: 8px; }
     .footer-social { display: flex; gap: 24px; align-items: center; }
@@ -971,7 +1020,7 @@
     .sticky-mobile-cta {
       display: none;
       position: fixed;
-      bottom: 20px;
+      bottom: -100px;
       left: 16px;
       right: 16px;
       z-index: 998;
@@ -983,8 +1032,9 @@
       font-weight: 700;
       text-decoration: none;
       box-shadow: 0 10px 25px rgba(255,94,58,0.4);
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: bottom 0.3s ease, transform 0.3s, box-shadow 0.3s;
     }
+    .sticky-mobile-cta.visible { bottom: 20px; }
     .sticky-mobile-cta:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(255,94,58,0.5); }
 
     /* ===== Animations ===== */
@@ -992,6 +1042,33 @@
       from { opacity: 0; transform: translateY(18px); } 
       to { opacity: 1; transform: translateY(0); } 
     }
+
+    /* Staggered animation delays */
+    .problems-grid .problem-card:nth-child(1) { transition-delay: 0s; }
+    .problems-grid .problem-card:nth-child(2) { transition-delay: 0.1s; }
+    .problems-grid .problem-card:nth-child(3) { transition-delay: 0.2s; }
+
+    .benefits-grid .benefit-card:nth-child(1) { transition-delay: 0s; }
+    .benefits-grid .benefit-card:nth-child(2) { transition-delay: 0.1s; }
+    .benefits-grid .benefit-card:nth-child(3) { transition-delay: 0.2s; }
+    .benefits-grid .benefit-card:nth-child(4) { transition-delay: 0.3s; }
+
+    .case-showcase .case-card:nth-child(1) { transition-delay: 0s; }
+    .case-showcase .case-card:nth-child(2) { transition-delay: 0.1s; }
+    .case-showcase .case-card:nth-child(3) { transition-delay: 0.2s; }
+
+    .testimonials-grid .testimonial-card:nth-child(1) { transition-delay: 0s; }
+    .testimonials-grid .testimonial-card:nth-child(2) { transition-delay: 0.1s; }
+    .testimonials-grid .testimonial-card:nth-child(3) { transition-delay: 0.2s; }
+
+    .pricing-grid .price-card:nth-child(1) { transition-delay: 0s; }
+    .pricing-grid .price-card:nth-child(2) { transition-delay: 0.1s; }
+    .pricing-grid .price-card:nth-child(3) { transition-delay: 0.2s; }
+
+    .process .step:nth-child(1) { transition-delay: 0s; }
+    .process .step:nth-child(2) { transition-delay: 0.15s; }
+    .process .step:nth-child(3) { transition-delay: 0.3s; }
+    .process .step:nth-child(4) { transition-delay: 0.45s; }
 
     /* ===== Media Queries ===== */
     @media (max-width: 768px) {
@@ -1016,14 +1093,15 @@
       .pricing-compare { font-size: 0.75rem; }
       .pricing-compare th, .pricing-compare td { padding: 8px 10px; }
       .sticky-mobile-cta { display: block; }
-      footer { flex-direction: column; text-align: center; align-items: center; }
+      footer { flex-direction: column; text-align: center; align-items: center; padding-bottom: 120px; }
       .footer-col { align-items: center; }
       .testimonials-grid { grid-template-columns: 1fr; }
     }
     
     @media (min-width: 769px) { 
       .burger { display: none; } 
-      .mobile-menu { display: none !important; } 
+      .mobile-menu { display: none !important; }
+      footer { padding-bottom: 60px; }
     }
 
     @media (max-width: 480px) {
@@ -1113,13 +1191,12 @@
             </div>
           </div>
           <div class="hero-visual">
-            <!-- Картинка До и После -->
             <div class="hero-before-after" aria-label="Пример результата: было и стало">
               <div class="before-side">
                 <span class="before-label">Было</span>
                 <span class="mockup-text">Текст мелкий,<br>кнопок не видно</span>
               </div>
-              <div class="hero-arrow">→</div>
+              <div class="hero-arrow" aria-hidden="true">→</div>
               <div class="after-side">
                 <span class="after-label">Стало</span>
                 <span class="mockup-text">Всё чётко,<br>удобно читать</span>
@@ -1149,18 +1226,24 @@
           <h2 class="section-title">Что обычно не так с сайтом?</h2>
           <div class="problems-grid">
             <div class="problem-card">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <h3>Сайт долго грузится</h3>
+              <h3>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Сайт долго грузится
+              </h3>
               <p>Если страница открывается больше трёх секунд, люди уходят. Мы ускоряем загрузку, чтобы никто не ждал.</p>
             </div>
             <div class="problem-card">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="8" y1="6" x2="8" y2="4"/><line x1="16" y1="6" x2="16" y2="4"/><circle cx="12" cy="18" r="1.5" fill="currentColor" stroke="none"/></svg>
-              <h3>На телефоне всё разъезжается</h3>
+              <h3>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="8" y1="6" x2="8" y2="4"/><line x1="16" y1="6" x2="16" y2="4"/><circle cx="12" cy="18" r="1.5" fill="currentColor" stroke="none"/></svg>
+                На телефоне всё разъезжается
+              </h3>
               <p>Больше половины посетителей заходят с телефона. Сделаем так, чтобы на любом экране было удобно листать и нажимать.</p>
             </div>
             <div class="problem-card">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 L15 9"/><path d="M22 2 L22 8"/><path d="M22 2 L16 2"/><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="10"/></svg>
-              <h3>Заходят и сразу уходят</h3>
+              <h3>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 L15 9"/><path d="M22 2 L22 8"/><path d="M22 2 L16 2"/><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="10"/></svg>
+                Заходят и сразу уходят
+              </h3>
               <p>Непонятно, куда нажать и что делать. Мы наводим порядок: убираем лишнее, расставляем акценты — путь к покупке становится короче.</p>
             </div>
           </div>
@@ -1289,6 +1372,7 @@
                   <small>Владелец магазина</small>
                 </div>
               </div>
+              <div class="testimonial-company">Интернет-магазин одежды</div>
             </div>
             <div class="testimonial-card">
               <div class="testimonial-stars" aria-label="5 из 5 звёзд">★★★★★</div>
@@ -1300,6 +1384,7 @@
                   <small>Руководитель студии</small>
                 </div>
               </div>
+              <div class="testimonial-company">Студия дизайна интерьеров</div>
             </div>
             <div class="testimonial-card">
               <div class="testimonial-stars" aria-label="5 из 5 звёзд">★★★★★</div>
@@ -1311,6 +1396,7 @@
                   <small>Предприниматель</small>
                 </div>
               </div>
+              <div class="testimonial-company">Производство мебели</div>
             </div>
           </div>
         </section>
@@ -1444,7 +1530,7 @@
         <section id="contact" class="contact-section">
           <div class="urgency-box" aria-live="polite">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span>Осталось 3 места на этот месяц</span>
+            <span>Осталось <span id="urgency-places">3</span> места на этот месяц</span>
           </div>
           <h2>Хотите такой же результат?</h2>
           <p>Напишите нам, и мы бесплатно посмотрим ваш сайт. Подскажем, что можно улучшить, и покажем на примере.</p>
@@ -1506,6 +1592,14 @@
         if (hour < 12) ctaDynamic.textContent = 'Начать сегодня';
         else if (hour < 18) ctaDynamic.textContent = 'Запустить проект';
         else ctaDynamic.textContent = 'Запланировать аудит';
+      }
+
+      // ===== Dynamic Urgency Counter =====
+      const urgencyPlaces = document.getElementById('urgency-places');
+      if (urgencyPlaces) {
+        const daySeed = new Date().getDate() + new Date().getMonth() * 31;
+        const pseudorandom = (daySeed % 5) + 1;
+        urgencyPlaces.textContent = pseudorandom;
       }
 
       // ===== Theme Management =====
@@ -1570,6 +1664,26 @@
           ticking = true;
         }
       }, { passive: true });
+
+      // ===== Sticky Mobile CTA =====
+      const stickyCTA = document.querySelector('.sticky-mobile-cta');
+      if (stickyCTA && window.innerWidth <= 768) {
+        let ctaTicking = false;
+        const updateCTA = () => {
+          if (window.scrollY > 300) {
+            stickyCTA.classList.add('visible');
+          } else {
+            stickyCTA.classList.remove('visible');
+          }
+          ctaTicking = false;
+        };
+        window.addEventListener('scroll', () => {
+          if (!ctaTicking) {
+            requestAnimationFrame(updateCTA);
+            ctaTicking = true;
+          }
+        }, { passive: true });
+      }
 
       // ===== Mobile Menu =====
       const burger = document.getElementById('burgerBtn');
