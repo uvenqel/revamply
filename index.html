@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Website Revamp — редизайн сайтов под современные стандарты</title>
+  <meta name="description" content="Редизайн сайтов, который повышает конверсию. Средний рост конверсии — 38%. Более 150 успешных проектов с 2019 года.">
+  <meta name="theme-color" content="#fafaf8" id="themeColorMeta">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://verst.design/">
+
+  <!-- Предзагрузка критических ресурсов -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Website Revamp — редизайн сайтов с гарантией роста конверсии">
+  <meta property="og:description" content="Редизайн сайтов, который повышает конверсию. Средний рост — 38%.">
+  <meta property="og:image" content="https://verst.design/og-image.jpg">
+  <meta property="og:url" content="https://verst.design/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23ff5e3a'/%3E%3Ctext x='50' y='72' font-size='68' text-anchor='middle' fill='white' font-family='Arial, sans-serif'%3E✨%3C/text%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23ff5e3a'/%3E%3Ctext x='50' y='72' font-size='68' text-anchor='middle' fill='white'%3E✨%3C/text%3E%3C/svg%3E">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Website Revamp",
+    "description": "Редизайн сайтов с гарантией роста конверсии. Средний рост конверсии — 38%.",
+    "url": "https://verst.design/",
+    "telephone": "+7-999-999-99-99",
+    "email": "privet@verst.design",
+    "priceRange": "₽₽",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Москва",
+      "addressCountry": "RU"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "153"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "RUB",
+      "lowPrice": "49000",
+      "highPrice": "195000"
+    }
+  }
+  </script>
+
+  <style>
+    /* ===== CSS Custom Properties ===== */
+    :root {
+      --bg: #fafaf8;
+      --bg-card: #ffffff;
+      --bg-glass: rgba(250, 250, 248, 0.9);
+      --bg-process: #0f0f17;
+      --text: #1a1a2e;
+      --text-secondary: #5a5a6e;
+      --text-process: #ffffff;
+      --border: #e4e4ea;
+      --border-card: #eef0f2;
+      --accent: #ff5e3a;
+      --accent-hover: #e04a2a;
+      --accent-light: #fff0ec;
+      --shadow: 0 12px 30px rgba(0,0,0,0.05);
+      --shadow-hover: 0 20px 35px rgba(0,0,0,0.1);
+      --btn-primary-bg: #14141f;
+      --btn-primary-text: #ffffff;
+      --btn-outline-border: #14141f;
+      --badge-bg: #fff0ec;
+      --stat-bg: #f8f8fc;
+      --star-color: #f5b342;
+      --logo-color: #0f0f17;
+      --logo-gradient: linear-gradient(135deg, #0f0f17 0%, #1a1a2e 100%);
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+      --radius-xl: 32px;
+      --radius-full: 60px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --font-stack: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    body.dark {
+      --bg: #0f0f17;
+      --bg-card: #1a1a26;
+      --bg-glass: rgba(15,15,23,0.9);
+      --bg-process: #1a1a28;
+      --text: #e8e8f0;
+      --text-secondary: #b0b0c4;
+      --border: #2a2a3a;
+      --border-card: #2a2a3a;
+      --accent: #ff6b4a;
+      --accent-hover: #ff5a35;
+      --accent-light: #2a1f1c;
+      --btn-primary-bg: #ffffff;
+      --btn-primary-text: #0f0f17;
+      --btn-outline-border: #ffffff;
+      --badge-bg: #2a1f1c;
+      --stat-bg: #1e1e2e;
+      --logo-color: #ffffff;
+      --logo-gradient: linear-gradient(135deg, #ffffff 0%, #e8e8f0 100%);
+      --shadow: 0 12px 30px rgba(0,0,0,0.2);
+      --shadow-hover: 0 20px 35px rgba(0,0,0,0.3);
+    }
+
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { 
+      scroll-behavior: smooth; 
+      scroll-padding-top: 120px; 
+      -webkit-text-size-adjust: 100%;
+    }
+    body {
+      font-family: var(--font-stack);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background var(--transition), color var(--transition);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      padding-top: 100px;
+    }
+
+    /* ===== Accessibility ===== */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 24px;
+      background: var(--accent);
+      color: white;
+      padding: 12px 24px;
+      z-index: 10000;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: top 0.3s ease;
+    }
+    .skip-link:focus { top: 24px; outline: 3px solid var(--text); outline-offset: 2px; }
+
+    :focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    :focus:not(:focus-visible) { outline: none; }
+
+    /* ===== Layout ===== */
+    .site-wrapper { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+    .container { max-width: 1240px; margin: 0 auto; }
+
+    /* ===== Header & Navigation ===== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      position: fixed;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 48px);
+      max-width: 1240px;
+      background: var(--bg-glass);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+      z-index: 1000;
+      transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s;
+    }
+    header.header-hidden { top: -120px; }
+    header.header-shadow { box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.6rem;
+      background: var(--logo-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: opacity 0.2s;
+    }
+    .logo:hover { opacity: 0.85; }
+    /* Оранжевая иконка в логотипе */
+    .logo-icon {
+      color: #ff5e3a;
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+    body.dark .logo-icon {
+      color: #ff6b4a;
+    }
+
+    .nav-desktop { display: flex; gap: 20px; align-items: center; }
+    .nav-desktop a { 
+      text-decoration: none; 
+      color: var(--text); 
+      font-weight: 500; 
+      transition: color 0.2s, transform 0.2s;
+      position: relative;
+      font-size: 0.92rem;
+    }
+    .nav-desktop a:not(.btn-contact):hover { color: var(--accent); }
+    .nav-desktop a:not(.btn-contact)::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.2s ease;
+    }
+    .nav-desktop a:not(.btn-contact):hover::after { width: 100%; }
+    .nav-desktop a.active { color: var(--accent); font-weight: 600; }
+    .nav-desktop a.active::after { width: 100%; }
+
+    .btn-contact {
+      background: var(--accent);
+      color: white !important;
+      padding: 10px 22px;
+      border-radius: 40px;
+      font-weight: 600;
+      transition: all 0.25s;
+      box-shadow: 0 6px 14px rgba(255,94,58,0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none !important;
+      font-size: 0.92rem;
+    }
+    .btn-contact::after { display: none !important; }
+    .btn-contact:hover { 
+      background: var(--accent-hover); 
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255,94,58,0.4);
+    }
+
+    /* ===== Burger Menu ===== */
+    .burger {
+      display: none;
+      width: 44px;
+      height: 44px;
+      background: transparent;
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      cursor: pointer;
+      z-index: 120;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      transition: all 0.25s ease;
+    }
+    .burger-icon { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; transition: transform 0.2s ease; }
+    .burger-icon svg { width: 24px; height: 24px; stroke: var(--text); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; transition: stroke 0.2s ease; }
+    .burger.active { background: var(--accent); border-color: var(--accent); }
+    .burger.active .burger-icon svg { stroke: white; }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100dvh;
+      background: var(--bg-card);
+      z-index: 105;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      padding: 100px 24px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .mobile-menu.open { display: flex; opacity: 1; }
+    .mobile-menu a { 
+      font-size: 1.6rem; 
+      font-weight: 600; 
+      color: var(--text); 
+      text-decoration: none;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .mobile-menu a:hover { color: var(--accent); transform: scale(1.05); }
+
+    /* ===== Theme Toggle ===== */
+    .theme-toggle {
+      background: transparent;
+      border: 1.5px solid var(--border);
+      border-radius: 40px;
+      width: 42px;
+      height: 42px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s ease;
+      color: var(--text);
+      flex-shrink: 0;
+    }
+    .theme-toggle:hover { background: var(--accent); border-color: var(--accent); transform: rotate(15deg); }
+    .theme-toggle:hover svg { stroke: white; }
+    .theme-toggle svg {
+      width: 20px; height: 20px;
+      stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; transition: stroke 0.2s;
+    }
+
+    /* ===== Buttons ===== */
+    .btn-primary, .btn-outline {
+      padding: 14px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+      font-family: var(--font-stack);
+    }
+    .btn-primary { 
+      background: var(--btn-primary-bg); 
+      color: var(--btn-primary-text); 
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 0; height: 0;
+      border-radius: 50%;
+      background: rgba(255,94,58,0.25);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+    .btn-primary:hover::before { width: 300px; height: 300px; }
+    .btn-primary:hover { background: var(--accent); color: white; transform: translateY(-3px); box-shadow: 0 12px 25px rgba(255,94,58,0.3); }
+
+    .btn-outline { 
+      border: 1.8px solid var(--btn-outline-border); 
+      color: var(--text); 
+      background: transparent; 
+    }
+    .btn-outline:hover { background: var(--accent); border-color: var(--accent); color: white; transform: translateY(-2px); }
+
+    /* ===== Typography ===== */
+    .section-title { 
+      font-size: clamp(2rem, 4vw, 2.6rem); 
+      font-weight: 700; 
+      text-align: center; 
+      margin: 80px 0 40px; 
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+    }
+    @supports not (text-wrap: balance) {
+      .section-title { max-width: 800px; margin-left: auto; margin-right: auto; }
+    }
+    h1, h2, h3, h4 { text-wrap: balance; }
+    .highlight { 
+      background: linear-gradient(135deg, #ff5e3a, #ff8a6e); 
+      -webkit-background-clip: text; 
+      background-clip: text; 
+      color: transparent; 
+    }
+    body.dark .highlight {
+      background: linear-gradient(135deg, #ff6b4a, #ffaa8a);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    /* ===== Hero Section ===== */
+    .hero { display: flex; flex-wrap: wrap; align-items: center; gap: 48px; padding: 20px 0 50px; }
+    .hero-text { flex: 1; min-width: 300px; }
+    .badge { 
+      background: var(--badge-bg); 
+      color: var(--accent); 
+      display: inline-flex; 
+      align-items: center; 
+      gap: 6px; 
+      padding: 8px 18px; 
+      border-radius: 40px; 
+      font-weight: 600; 
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      animation: fadeInUp 0.5s ease backwards;
+    }
+    h1 { 
+      font-size: clamp(2.4rem, 5vw, 3.6rem); 
+      font-weight: 750; 
+      line-height: 1.15; 
+      margin-bottom: 20px; 
+      letter-spacing: -0.02em;
+      animation: fadeInUp 0.5s 0.1s ease backwards;
+    }
+    .hero-text > p {
+      animation: fadeInUp 0.5s 0.2s ease backwards;
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      line-height: 1.65;
+      max-width: 540px;
+    }
+    .hero-actions { 
+      display: flex; 
+      gap: 16px; 
+      flex-wrap: wrap; 
+      margin-top: 28px;
+      animation: fadeInUp 0.5s 0.3s ease backwards;
+    }
+
+    .hero-visual { 
+      flex: 1; 
+      min-width: 340px;
+      background: var(--bg-card); 
+      border-radius: var(--radius-xl); 
+      padding: 24px; 
+      box-shadow: var(--shadow); 
+      border: 1px solid var(--border-card);
+      animation: fadeInUp 0.5s 0.2s ease backwards;
+    }
+
+    /* Упрощенная картинка До и После */
+    .hero-before-after {
+      width: 100%;
+      aspect-ratio: 16/10;
+      background: linear-gradient(135deg, #f0f0f5 0%, #e8e8f0 100%);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+    body.dark .hero-before-after { background: linear-gradient(135deg, #1e1e30 0%, #252540 100%); }
+    
+    .before-side, .after-side {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+    .before-side {
+      background: rgba(0,0,0,0.03);
+      border-right: 2px dashed var(--border);
+    }
+    body.dark .before-side {
+      background: rgba(255,255,255,0.03);
+      border-right: 2px dashed var(--border);
+    }
+    .before-label, .after-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      background: var(--stat-bg);
+      color: var(--text);
+      font-weight: 700;
+    }
+    .after-label {
+      background: var(--accent);
+      color: white;
+    }
+    .mockup-text {
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+    .hero-arrow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--accent);
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      z-index: 2;
+      box-shadow: 0 4px 12px rgba(255,94,58,0.3);
+    }
+
+    /* Stats */
+    .stats-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 16px;
+      background: var(--stat-bg);
+      padding: 20px 16px;
+      border-radius: var(--radius-full);
+      margin-top: 16px;
+    }
+    .stat-item { text-align: center; }
+    .stat-number { font-size: 1.8rem; font-weight: 800; color: var(--accent); line-height: 1; }
+    .stat-label { font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px; }
+    .stat-divider { width: 1px; height: 40px; background: var(--border); }
+
+    /* ===== Problems Grid ===== */
+    .problems-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+      gap: 28px; 
+      margin: 30px 0 50px; 
+    }
+    .problem-card { 
+      background: var(--bg-card); 
+      padding: 32px 28px; 
+      border-radius: var(--radius-md); 
+      box-shadow: var(--shadow); 
+      border: 1px solid var(--border-card); 
+      transition: all var(--transition);
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .problem-card.visible { opacity: 1; transform: translateY(0); }
+    .problem-card:hover { 
+      transform: translateY(-6px); 
+      border-color: var(--accent); 
+      box-shadow: var(--shadow-hover);
+    }
+    .problem-card svg { 
+      width: 44px; height: 44px; 
+      color: var(--accent); 
+      margin-bottom: 18px; 
+      stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+      transition: transform var(--transition);
+    }
+    .problem-card:hover svg { transform: rotate(-5deg) scale(1.1); }
+    .problem-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+    .problem-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.55; }
+
+    /* ===== Why Us Section ===== */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 28px;
+      margin: 30px 0 50px;
+    }
+    .benefit-card {
+      background: var(--bg-card);
+      padding: 32px 28px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-card);
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .benefit-card.visible { opacity: 1; transform: translateY(0); }
+    .benefit-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 4px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .benefit-card:hover::before { transform: scaleX(1); }
+    .benefit-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+    .benefit-number { font-size: 2.5rem; font-weight: 800; color: var(--accent); opacity: 0.2; margin-bottom: 16px; line-height: 1; }
+    .benefit-card h4 { font-size: 1.15rem; margin-bottom: 10px; }
+    .benefit-card p { color: var(--text-secondary); line-height: 1.55; font-size: 0.95rem; }
+
+    /* ===== Case Showcase ===== */
+    .case-showcase {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin: 40px 0 50px;
+      justify-content: center;
+    }
+    .case-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      flex: 1 1 360px;
+      max-width: 500px;
+      transition: all var(--transition);
+      border: 1px solid var(--border-card);
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .case-card.visible { opacity: 1; transform: translateY(0); }
+    .case-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
+    .case-title { 
+      padding: 24px 24px 12px; 
+      font-size: 1.4rem; 
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .case-title span:last-child { 
+      color: var(--accent); 
+      font-weight: 700;
+      font-size: 0.9rem;
+      background: var(--badge-bg);
+      padding: 6px 14px;
+      border-radius: 40px;
+      white-space: nowrap;
+    }
+
+    /* Case Mockup Placeholder */
+    .case-mockup {
+      width: 100%;
+      aspect-ratio: 16/10;
+      background: linear-gradient(135deg, #e8e8f5 0%, #f0f0f5 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+    }
+    body.dark .case-mockup { background: linear-gradient(135deg, #1a1a30 0%, #222238 100%); }
+
+    .case-desc { 
+      padding: 20px 24px 28px; 
+      border-top: 1px solid var(--border-card); 
+      font-weight: 500; 
+      color: var(--text-secondary);
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+    .case-desc strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    /* ===== Process Section ===== */
+    .process { 
+      background: var(--bg-process); 
+      color: var(--text-process); 
+      border-radius: 40px; 
+      padding: 48px 40px; 
+      margin: 50px 0; 
+    }
+    .process h2 { font-size: 2rem; margin-bottom: 8px; }
+    .process p { opacity: 0.8; margin-bottom: 8px; }
+    .process-steps { 
+      display: flex; 
+      flex-wrap: wrap; 
+      justify-content: space-between; 
+      gap: 30px; 
+      margin-top: 36px; 
+    }
+    .step { 
+      display: flex; 
+      gap: 18px; 
+      flex: 1; 
+      min-width: 160px; 
+      padding: 12px;
+      border-radius: var(--radius-md);
+      transition: background 0.3s, transform 0.3s;
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    .step.visible { opacity: 1; transform: translateX(0); }
+    .step:hover { background: rgba(255,255,255,0.05); }
+    .step-number { 
+      font-size: 3rem; 
+      font-weight: 800; 
+      opacity: 0.25; 
+      line-height: 1;
+      transition: opacity 0.3s;
+      flex-shrink: 0;
+    }
+    .step:hover .step-number { opacity: 0.55; }
+    .step h4 { font-size: 1.1rem; margin-bottom: 6px; }
+    .step p { font-size: 0.9rem; opacity: 0.8; }
+
+    /* ===== Testimonials ===== */
+    .testimonials-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 28px; 
+      margin: 30px 0 50px; 
+    }
+    .testimonial-card { 
+      background: var(--bg-card); 
+      border-radius: var(--radius-lg); 
+      padding: 28px; 
+      box-shadow: var(--shadow); 
+      border: 1px solid var(--border-card);
+      transition: all var(--transition);
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .testimonial-card.visible { opacity: 1; transform: translateY(0); }
+    .testimonial-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .testimonial-stars { 
+      color: var(--star-color); 
+      font-size: 1.1rem; 
+      margin-bottom: 16px; 
+      letter-spacing: 3px; 
+      user-select: none;
+    }
+    .testimonial-card > p { 
+      font-style: italic; 
+      color: var(--text); 
+      margin-bottom: 20px; 
+      line-height: 1.5; 
+    }
+    .testimonial-author { 
+      display: flex; 
+      align-items: center; 
+      gap: 14px; 
+    }
+    .avatar { 
+      width: 56px; 
+      height: 56px; 
+      border-radius: 50%; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      font-weight: bold; 
+      color: white; 
+      font-size: 1.1rem; 
+      flex-shrink: 0;
+      background-size: cover;
+      background-position: center;
+    }
+    .avatar-placeholder { background: var(--accent); }
+    .testimonial-author b { display: block; font-size: 0.95rem; }
+    .testimonial-author small { color: var(--text-secondary); font-size: 0.8rem; }
+    .testimonial-company { 
+      display: inline-block;
+      margin-top: 12px;
+      padding: 4px 12px;
+      background: var(--stat-bg);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* ===== Pricing ===== */
+    .pricing-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); 
+      gap: 28px; 
+      margin: 30px 0 40px; 
+    }
+    .price-card { 
+      background: var(--bg-card); 
+      border-radius: var(--radius-xl); 
+      padding: 32px 28px; 
+      box-shadow: var(--shadow); 
+      border: 1px solid var(--border-card); 
+      transition: all var(--transition); 
+      display: flex; 
+      flex-direction: column;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .price-card.visible { opacity: 1; transform: translateY(0); }
+    .price-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+    .price-card.featured { 
+      border: 2px solid var(--accent);
+      position: relative;
+      box-shadow: 0 15px 35px rgba(255,94,58,0.12);
+    }
+    .price-card.featured:hover { transform: translateY(-6px); }
+    .price-card.featured::after {
+      content: 'Рекомендуем';
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: white;
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .price-card h4 { font-size: 1.2rem; margin-bottom: 8px; }
+    .price-timeline { 
+      font-size: 0.8rem; 
+      color: var(--accent); 
+      font-weight: 600; 
+      margin-bottom: 4px;
+      background: var(--badge-bg);
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      align-self: flex-start;
+    }
+    .price { font-size: 2.6rem; font-weight: 800; margin: 12px 0; letter-spacing: -0.02em; }
+    .price-features { list-style: none; margin: 20px 0 32px; flex: 1; }
+    .price-features li { 
+      display: flex; 
+      gap: 12px; 
+      margin-bottom: 14px; 
+      align-items: center; 
+      font-size: 0.95rem;
+    }
+    .price-features svg { 
+      color: var(--accent); 
+      width: 22px; height: 22px; 
+      flex-shrink: 0; 
+      fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; 
+    }
+    .price-card .btn-primary,
+    .price-card .btn-outline { 
+      display: flex; 
+      justify-content: center; 
+      text-align: center; 
+    }
+
+    /* Pricing Comparison Table */
+    .pricing-compare {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .pricing-compare table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .pricing-compare th {
+      text-align: left;
+      padding: 14px 16px;
+      border-bottom: 2px solid var(--border);
+      font-weight: 700;
+      color: var(--text);
+    }
+    .pricing-compare th:not(:first-child) { text-align: center; }
+    .pricing-compare td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-card);
+      color: var(--text-secondary);
+    }
+    .pricing-compare td:not(:first-child) { text-align: center; }
+    .pricing-compare tr:hover td { background: var(--stat-bg); }
+    .check-icon { color: var(--accent); font-weight: bold; }
+    .dash-icon { color: var(--text-secondary); opacity: 0.4; }
+
+    /* ===== FAQ ===== */
+    .faq-grid { 
+      max-width: 800px; 
+      margin: 30px auto 60px; 
+      display: flex; 
+      flex-direction: column; 
+      gap: 16px; 
+    }
+    .faq-item { 
+      background: var(--bg-card); 
+      border-radius: 24px; 
+      padding: 20px 28px; 
+      border: 1px solid var(--border-card); 
+      cursor: pointer;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .faq-item:hover { border-color: var(--accent); box-shadow: var(--shadow); }
+    .faq-item summary { 
+      font-weight: 650; 
+      font-size: 1.1rem; 
+      list-style: none; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      gap: 16px;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { 
+      content: '+'; 
+      font-size: 1.8rem; 
+      color: var(--accent); 
+      transition: transform 0.3s; 
+      flex-shrink: 0;
+      font-weight: 400;
+      line-height: 1;
+    }
+    .faq-item[open] summary::after { 
+      content: '−'; 
+      transform: rotate(180deg);
+    }
+    .faq-item p { margin-top: 16px; color: var(--text-secondary); line-height: 1.55; }
+
+    /* ===== Contact Section ===== */
+    .contact-section {
+      text-align: center;
+      padding: 48px 32px;
+      background: var(--bg-card);
+      border-radius: 40px;
+      margin: 40px 0;
+      border: 1px solid var(--border-card);
+    }
+    .urgency-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--badge-bg);
+      color: var(--accent);
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+    }
+    .contact-section h2 { font-size: clamp(2rem, 4vw, 2.6rem); }
+    .contact-section > p { margin: 20px 0 32px; font-size: 1.15rem; color: var(--text-secondary); max-width: 600px; margin-left: auto; margin-right: auto; }
+    .contact-actions { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+
+    /* ===== Footer ===== */
+    footer { 
+      border-top: 1px solid var(--border); 
+      padding: 32px 0; 
+      display: flex; 
+      flex-wrap: wrap; 
+      justify-content: space-between; 
+      align-items: flex-start; 
+      gap: 24px; 
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      /* ОБЯЗАТЕЛЬНО ДОБАВЛЕННЫЙ ОТСТУП СНИЗУ */
+      padding-bottom: 120px; 
+    }
+    .footer-col { display: flex; flex-direction: column; gap: 8px; }
+    .footer-social { display: flex; gap: 24px; align-items: center; }
+    footer a { 
+      color: var(--text-secondary); 
+      text-decoration: none; 
+      transition: color 0.2s; 
+    }
+    footer a:hover { color: var(--accent); }
+
+    /* ===== Sticky Mobile CTA ===== */
+    .sticky-mobile-cta {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      left: 16px;
+      right: 16px;
+      z-index: 998;
+      background: var(--accent);
+      color: white;
+      text-align: center;
+      padding: 14px;
+      border-radius: 40px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(255,94,58,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .sticky-mobile-cta:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(255,94,58,0.5); }
+
+    /* ===== Animations ===== */
+    @keyframes fadeInUp { 
+      from { opacity: 0; transform: translateY(18px); } 
+      to { opacity: 1; transform: translateY(0); } 
+    }
+
+    /* ===== Media Queries ===== */
+    @media (max-width: 768px) {
+      .nav-desktop { display: none; }
+      .burger { display: flex; }
+      header { top: 8px; width: calc(100% - 32px); padding: 10px 18px; }
+      .site-wrapper { padding: 0 16px; }
+      body { padding-top: 80px; }
+      .hero { flex-direction: column; text-align: center; padding: 10px 0 30px; }
+      .hero-text > p { max-width: 100%; }
+      .hero-actions { justify-content: center; }
+      .hero-visual { min-width: auto; width: 100%; }
+      .process { padding: 32px 20px; border-radius: 28px; }
+      .process-steps { flex-direction: column; align-items: flex-start; }
+      .step { flex-direction: column; width: 100%; }
+      .stats-container { flex-direction: column; gap: 12px; padding: 16px; border-radius: 28px; }
+      .stat-divider { width: 60px; height: 1px; }
+      .case-title { padding: 20px 20px 8px; font-size: 1.2rem; }
+      .case-desc { padding: 16px 20px 22px; }
+      .contact-section { margin: 20px 0; padding: 32px 20px; border-radius: 28px; }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .pricing-compare { font-size: 0.75rem; }
+      .pricing-compare th, .pricing-compare td { padding: 8px 10px; }
+      .sticky-mobile-cta { display: block; }
+      footer { flex-direction: column; text-align: center; align-items: center; }
+      .footer-col { align-items: center; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+    
+    @media (min-width: 769px) { 
+      .burger { display: none; } 
+      .mobile-menu { display: none !important; } 
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 2rem; }
+      .btn-primary, .btn-outline { width: 100%; justify-content: center; }
+      .hero-actions { flex-direction: column; width: 100%; }
+      .contact-actions { flex-direction: column; }
+      .contact-actions a { width: 100%; justify-content: center; }
+      .pricing-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Пропустить навигацию</a>
+  
+  <div class="site-wrapper">
+    <div class="container">
+      <!-- ===== Header ===== -->
+      <header id="siteHeader">
+        <a href="#" class="logo" aria-label="Website Revamp — на главную">
+          <span class="logo-icon">✨</span> Website Revamp
+        </a>
+        <nav class="nav-desktop" aria-label="Основная навигация">
+          <a href="#work">Проблемы</a>
+          <a href="#why-us">Преимущества</a>
+          <a href="#portfolio">Кейсы</a>
+          <a href="#process">Процесс</a>
+          <a href="#pricing">Цены</a>
+          <a href="#testimonials">Отзывы</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact" class="btn-contact">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            Связаться
+          </a>
+          <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему оформления">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          </button>
+        </nav>
+        <button class="burger" id="burgerBtn" aria-label="Меню" aria-expanded="false">
+          <span class="burger-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+            </svg>
+          </span>
+        </button>
+      </header>
+
+      <!-- ===== Mobile Menu ===== -->
+      <nav class="mobile-menu" id="mobileMenu" aria-label="Мобильное меню">
+        <a href="#work">Проблемы</a>
+        <a href="#why-us">Преимущества</a>
+        <a href="#portfolio">Кейсы</a>
+        <a href="#process">Процесс</a>
+        <a href="#pricing">Цены</a>
+        <a href="#testimonials">Отзывы</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="btn-contact">Связаться</a>
+        <button class="theme-toggle" id="themeToggleMobile" aria-label="Переключить тему оформления">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+      </nav>
+
+      <!-- ===== Main Content ===== -->
+      <main id="main-content">
+        <!-- Hero -->
+        <section class="hero">
+          <div class="hero-text">
+            <div class="badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              Обновляем сайты с 2019
+            </div>
+            <h1>Делаем из старого сайта <span class="highlight">удобный и продающий</span></h1>
+            <p>Ваш сайт перестал приносить заявки? Мы переделаем его так, что клиентам будет понятно и приятно. Работаем с 2019 года, больше 150 проектов.</p>
+            <div class="hero-actions">
+              <a href="#contact" class="btn-primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                <span class="cta-dynamic">Обновить сайт</span>
+              </a>
+              <a href="#portfolio" class="btn-outline">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M22 12c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2s10 4.48 10 10z"/></svg>
+                Посмотреть примеры →
+              </a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <!-- Картинка До и После -->
+            <div class="hero-before-after" aria-label="Пример результата: было и стало">
+              <div class="before-side">
+                <span class="before-label">Было</span>
+                <span class="mockup-text">Текст мелкий,<br>кнопок не видно</span>
+              </div>
+              <div class="hero-arrow">→</div>
+              <div class="after-side">
+                <span class="after-label">Стало</span>
+                <span class="mockup-text">Всё чётко,<br>удобно читать</span>
+              </div>
+            </div>
+            <div class="stats-container" aria-label="Ключевые показатели">
+              <div class="stat-item">
+                <div class="stat-number" data-target="153">0</div>
+                <div class="stat-label">+ проектов</div>
+              </div>
+              <div class="stat-divider" aria-hidden="true"></div>
+              <div class="stat-item">
+                <div class="stat-number" data-target="4.9">0</div>
+                <div class="stat-label">⭐ рейтинг</div>
+              </div>
+              <div class="stat-divider" aria-hidden="true"></div>
+              <div class="stat-item">
+                <div class="stat-number" data-target="38">0</div>
+                <div class="stat-label">% рост заявок</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Problems (Work) -->
+        <section id="work">
+          <h2 class="section-title">Что обычно не так с сайтом?</h2>
+          <div class="problems-grid">
+            <div class="problem-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <h3>Сайт долго грузится</h3>
+              <p>Если страница открывается больше трёх секунд, люди уходят. Мы ускоряем загрузку, чтобы никто не ждал.</p>
+            </div>
+            <div class="problem-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="8" y1="6" x2="8" y2="4"/><line x1="16" y1="6" x2="16" y2="4"/><circle cx="12" cy="18" r="1.5" fill="currentColor" stroke="none"/></svg>
+              <h3>На телефоне всё разъезжается</h3>
+              <p>Больше половины посетителей заходят с телефона. Сделаем так, чтобы на любом экране было удобно листать и нажимать.</p>
+            </div>
+            <div class="problem-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 L15 9"/><path d="M22 2 L22 8"/><path d="M22 2 L16 2"/><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="10"/></svg>
+              <h3>Заходят и сразу уходят</h3>
+              <p>Непонятно, куда нажать и что делать. Мы наводим порядок: убираем лишнее, расставляем акценты — путь к покупке становится короче.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Why Us -->
+        <section id="why-us">
+          <h2 class="section-title">Почему с нами не страшно</h2>
+          <div class="benefits-grid">
+            <div class="benefit-card">
+              <div class="benefit-number">01</div>
+              <h4>Не просто картинки, а смысл</h4>
+              <p>Сначала разбираемся, кто ваш клиент и что ему нужно. Дизайн рисуем под задачу, а не для красоты.</p>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-number">02</div>
+              <h4>Вы всё видите в процессе</h4>
+              <p>Даём ссылку на макет, где можно смотреть и комментировать каждый шаг. Никаких сюрпризов в конце.</p>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-number">03</div>
+              <h4>Работаем на любой платформе</h4>
+              <p>Tilda, Webflow, WordPress или просто код — подхватим ваш сайт и сделаем конфетку.</p>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-number">04</div>
+              <h4>Договор и гарантии</h4>
+              <p>Прописываем сроки и обещанный рост заявок. Не получилось — дорабатываем бесплатно.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Portfolio / Cases -->
+        <section id="portfolio">
+          <h2 class="section-title">Как мы помогли другим</h2>
+          
+          <div class="case-showcase">
+            <!-- Case 1 -->
+            <div class="case-card">
+              <div class="case-title"><span>Интернет-магазин одежды</span><span>+41% заказов</span></div>
+              <div class="case-mockup" style="background: linear-gradient(135deg, #f5f0ff 0%, #ede4ff 100%);">
+                <span style="opacity:0.6">📸 Скриншот проекта</span>
+              </div>
+              <div class="case-desc">
+                <strong>Ситуация:</strong> Неудобный каталог, люди путались и бросали корзину.<br>
+                <strong>Решение:</strong> Переработали меню и карточки товаров — путь к покупке сократился вдвое.<br>
+                <strong>Итог:</strong> Заказы выросли на <span style="color:var(--accent); font-weight:700;">41%</span> уже через две недели.
+              </div>
+            </div>
+            <!-- Case 2 -->
+            <div class="case-card">
+              <div class="case-title"><span>Студия ремонта</span><span>+63% звонков</span></div>
+              <div class="case-mockup" style="background: linear-gradient(135deg, #f0f7ff 0%, #e0edff 100%);">
+                <span style="opacity:0.6">📸 Скриншот проекта</span>
+              </div>
+              <div class="case-desc">
+                <strong>Ситуация:</strong> Сайт выглядел устаревшим и не вызывал доверия, заявок почти не было.<br>
+                <strong>Решение:</strong> Добавили живые отзывы, примеры работ и удобную форму обратной связи.<br>
+                <strong>Итог:</strong> Количество звонков взлетело на <span style="color:var(--accent); font-weight:700;">63%</span> в первый месяц.
+              </div>
+            </div>
+            <!-- Case 3 -->
+            <div class="case-card">
+              <div class="case-title"><span>Архитектурное бюро</span><span>×2 вовлечённость</span></div>
+              <div class="case-mockup" style="background: linear-gradient(135deg, #fff5f0 0%, #ffe8e0 100%);">
+                <span style="opacity:0.6">📸 Скриншот проекта</span>
+              </div>
+              <div class="case-desc">
+                <strong>Ситуация:</strong> Портфолио проектов было сухим, посетители уходили спустя 10 секунд.<br>
+                <strong>Решение:</strong> Оживили подачу: добавили анимацию и истории создания каждого проекта.<br>
+                <strong>Итог:</strong> Посетители стали изучать сайт <span style="color:var(--accent); font-weight:700;">в два раза дольше</span>.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Process -->
+        <section id="process">
+          <div class="process">
+            <h2>Как мы работаем</h2>
+            <p>Всё просто: вы ставите задачу — мы делаем. Этапы ниже.</p>
+            <div class="process-steps">
+              <div class="step">
+                <span class="step-number">01</span>
+                <div>
+                  <h4>Смотрим, что не так</h4>
+                  <p>Анализируем ваш сайт и сайты конкурентов. Находим, где теряются клиенты. Это занимает 2–3 дня.</p>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-number">02</span>
+                <div>
+                  <h4>Придумываем структуру</h4>
+                  <p>Рисуем схему будущего сайта: что и где будет лежать. Согласовываем с вами до дизайна.</p>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-number">03</span>
+                <div>
+                  <h4>Рисуем и верстаем</h4>
+                  <p>Делаем дизайн в вашем стиле и переносим на платформу. Сайт будет отлично выглядеть и на компьютере, и на телефоне.</p>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-number">04</span>
+                <div>
+                  <h4>Запускаем и помогаем</h4>
+                  <p>Проверяем всё перед стартом, подключаем статистику. Месяц после запуска мы на связи и поправляем, если что.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials">
+          <h2 class="section-title">Что говорят клиенты</h2>
+          <div class="testimonials-grid">
+            <div class="testimonial-card">
+              <div class="testimonial-stars" aria-label="5 из 5 звёзд">★★★★★</div>
+              <p>«Долго мучились со старым сайтом. Ребята сделали всё понятно и быстро. Клиенты теперь сами пишут, даже рекламу меньше крутим.»</p>
+              <div class="testimonial-author">
+                <div class="avatar avatar-placeholder" aria-hidden="true">АК</div>
+                <div>
+                  <b>Алексей К.</b>
+                  <small>Владелец магазина</small>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-stars" aria-label="5 из 5 звёзд">★★★★★</div>
+              <p>«Переживала, что будет дорого и непонятно. Объяснили каждый шаг, учли все хотелки. Заявки выросли в полтора раза, спасибо!»</p>
+              <div class="testimonial-author">
+                <div class="avatar avatar-placeholder" aria-hidden="true">МЛ</div>
+                <div>
+                  <b>Марина Л.</b>
+                  <small>Руководитель студии</small>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-stars" aria-label="5 из 5 звёзд">★★★★★</div>
+              <p>«Сайт летает на телефоне, раньше было стыдно открывать. Сделали за три недели, как и договаривались. Очень довольны.»</p>
+              <div class="testimonial-author">
+                <div class="avatar avatar-placeholder" aria-hidden="true">ЕД</div>
+                <div>
+                  <b>Евгений Д.</b>
+                  <small>Предприниматель</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Pricing -->
+        <section id="pricing">
+          <h2 class="section-title">Сколько это стоит</h2>
+          <div class="pricing-grid">
+            <div class="price-card">
+              <span class="price-timeline">⏱ 7–10 дней</span>
+              <h4>Базовый</h4>
+              <div class="price">49 000 ₽</div>
+              <ul class="price-features">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg>Разбор вашего сайта</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg>Главная страница под ключ</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg>Работает на телефонах</li>
+              </ul>
+              <a href="#contact" class="btn-outline">Выбрать</a>
+            </div>
+            <div class="price-card featured">
+              <span class="price-timeline">⏱ 14–21 день</span>
+              <h4>Оптимальный</h4>
+              <div class="price">99 000 ₽</div>
+              <ul class="price-features">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg>До 5 страниц</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg>Живой макет для согласования</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg>Сборка на Tilda или Webflow</li>
+              </ul>
+              <a href="#contact" class="btn-primary">Выбрать</a>
+            </div>
+            <div class="price-card">
+              <span class="price-timeline">⏱ 21–30 дней</span>
+              <h4>Всё включено</h4>
+              <div class="price">195 000 ₽</div>
+              <ul class="price-features">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg>Полный дизайн с нуля</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg>Напишем тексты</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg>Месяц поддержки после сдачи</li>
+              </ul>
+              <a href="#contact" class="btn-outline">Обсудить</a>
+            </div>
+          </div>
+
+          <!-- Comparison Table -->
+          <div class="pricing-compare">
+            <table>
+              <thead>
+                <tr>
+                  <th>Что входит</th>
+                  <th>Базовый</th>
+                  <th>Оптимальный</th>
+                  <th>Всё включено</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Аудит текущего сайта</td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Адаптивный дизайн</td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Интерактивный прототип</td>
+                  <td><span class="dash-icon">—</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Вёрстка на Tilda/Webflow</td>
+                  <td><span class="dash-icon">—</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Тексты для сайта</td>
+                  <td><span class="dash-icon">—</span></td>
+                  <td><span class="dash-icon">—</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Поддержка после запуска</td>
+                  <td>14 дней</td>
+                  <td>30 дней</td>
+                  <td>30 дней</td>
+                </tr>
+                <tr>
+                  <td>Срок выполнения</td>
+                  <td>7–10 дней</td>
+                  <td>14–21 день</td>
+                  <td>21–30 дней</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq">
+          <h2 class="section-title">Частые вопросы</h2>
+          <div class="faq-grid">
+            <details class="faq-item" id="faq-timing">
+              <summary>Сколько времени занимает обновление?</summary>
+              <p>От 7 до 30 дней. Всё зависит от того, сколько страниц нужно сделать. Точный срок обсудим и закрепим в договоре.</p>
+            </details>
+            <details class="faq-item" id="faq-guarantee" open>
+              <summary>А если результат не понравится?</summary>
+              <p>Мы прописываем в договоре конкретные цели (например, рост заявок). Если не получилось — дорабатываем за свой счёт.</p>
+            </details>
+            <details class="faq-item" id="faq-single-page">
+              <summary>Можно заказать только одну страницу?</summary>
+              <p>Да, тариф «Базовый» как раз для этого. Обновим главную страницу, и она уже начнёт работать лучше.</p>
+            </details>
+            <details class="faq-item" id="faq-platforms">
+              <summary>Вы работаете с Тильдой или другими конструкторами?</summary>
+              <p>Да, мы делаем сайты на Tilda, Webflow и WordPress. Если сайт на чём-то другом — тоже разберёмся.</p>
+            </details>
+            <details class="faq-item" id="faq-process">
+              <summary>Я ничего не понимаю в сайтах. Как будем общаться?</summary>
+              <p>Мы всё объясним простыми словами. Вы просто говорите, что нравится, а что нет. Остальное — наша забота.</p>
+            </details>
+          </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="contact-section">
+          <div class="urgency-box" aria-live="polite">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Осталось 3 места на этот месяц</span>
+          </div>
+          <h2>Хотите такой же результат?</h2>
+          <p>Напишите нам, и мы бесплатно посмотрим ваш сайт. Подскажем, что можно улучшить, и покажем на примере.</p>
+          <div class="contact-actions">
+            <a href="https://t.me/verstdesign" target="_blank" rel="noopener noreferrer" class="btn-primary" id="cta-telegram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+              Написать в Telegram
+            </a>
+            <a href="mailto:privet@verst.design" class="btn-outline">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7L12 15 2 7"/></svg>
+              privet@verst.design
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <!-- ===== Footer ===== -->
+      <footer>
+        <div class="footer-col">
+          <div id="footer-copy">&copy; 2025 Website Revamp</div>
+          <small style="opacity:0.7">Делаем сайты понятными</small>
+        </div>
+        <div class="footer-col">
+          <a href="#portfolio">Примеры</a>
+          <a href="#pricing">Цены</a>
+          <a href="#faq">Вопросы</a>
+        </div>
+        <div class="footer-col">
+          <a href="#" target="_blank" rel="noopener noreferrer">Политика конфиденциальности</a>
+          <a href="#" target="_blank" rel="noopener noreferrer">Договор-оферта</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://t.me/verstdesign" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="4"/><circle cx="12" cy="12" r="4"/></svg>
+          </a>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Sticky Mobile CTA -->
+  <a href="#contact" class="sticky-mobile-cta" aria-label="Связаться с нами">🚀 Обновить сайт — от 49 000 ₽</a>
+
+  <script>
+    (function() {
+      // ===== Dynamic Footer Year =====
+      const footerCopy = document.getElementById('footer-copy');
+      if (footerCopy) {
+        footerCopy.innerHTML = `&copy; ${new Date().getFullYear()} Website Revamp`;
+      }
+
+      // ===== Dynamic CTA based on time of day =====
+      const ctaDynamic = document.querySelector('.cta-dynamic');
+      if (ctaDynamic) {
+        const hour = new Date().getHours();
+        if (hour < 12) ctaDynamic.textContent = 'Начать сегодня';
+        else if (hour < 18) ctaDynamic.textContent = 'Запустить проект';
+        else ctaDynamic.textContent = 'Запланировать аудит';
+      }
+
+      // ===== Theme Management =====
+      const getThemeIcon = (isDark) => isDark ? 
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>' :
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+
+      const applyTheme = (isDark) => {
+        document.body.classList.toggle('dark', isDark);
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        const icon = getThemeIcon(isDark);
+        document.querySelectorAll('#themeToggle, #themeToggleMobile').forEach(btn => {
+          if (btn) btn.innerHTML = icon;
+        });
+        const metaTheme = document.getElementById('themeColorMeta');
+        if (metaTheme) metaTheme.content = isDark ? '#0f0f17' : '#fafaf8';
+      };
+
+      const getPreferredTheme = () => {
+        const saved = localStorage.getItem('theme');
+        if (saved) return saved === 'dark';
+        return window.matchMedia('(prefers-color-scheme: dark)').matches;
+      };
+
+      applyTheme(getPreferredTheme());
+
+      const toggleTheme = () => applyTheme(!document.body.classList.contains('dark'));
+      document.getElementById('themeToggle')?.addEventListener('click', toggleTheme);
+      document.getElementById('themeToggleMobile')?.addEventListener('click', toggleTheme);
+
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) applyTheme(e.matches);
+      });
+
+      // ===== Sticky Header (show on scroll up) =====
+      const header = document.getElementById('siteHeader');
+      let lastScrollY = 0;
+      let ticking = false;
+
+      const updateHeader = () => {
+        const currentScrollY = window.scrollY;
+        
+        if (currentScrollY > 100) {
+          header.classList.add('header-shadow');
+        } else {
+          header.classList.remove('header-shadow');
+        }
+
+        if (currentScrollY > lastScrollY && currentScrollY > 200) {
+          header.classList.add('header-hidden');
+        } else if (currentScrollY < lastScrollY) {
+          header.classList.remove('header-hidden');
+        }
+        
+        lastScrollY = currentScrollY;
+        ticking = false;
+      };
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(updateHeader);
+          ticking = true;
+        }
+      }, { passive: true });
+
+      // ===== Mobile Menu =====
+      const burger = document.getElementById('burgerBtn');
+      const menu = document.getElementById('mobileMenu');
+      const burgerIconSpan = burger?.querySelector('.burger-icon');
+
+      const setBurgerIcon = (isOpen) => {
+        if (!burgerIconSpan) return;
+        burgerIconSpan.innerHTML = isOpen ?
+          `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>` :
+          `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>`;
+      };
+
+      if (burger && menu) {
+        const closeMenu = () => {
+          menu.classList.remove('open');
+          burger.classList.remove('active');
+          burger.setAttribute('aria-expanded', 'false');
+          setBurgerIcon(false);
+          document.body.style.overflow = '';
+        };
+        const openMenu = () => {
+          menu.classList.add('open');
+          burger.classList.add('active');
+          burger.setAttribute('aria-expanded', 'true');
+          setBurgerIcon(true);
+          document.body.style.overflow = 'hidden';
+        };
+        burger.addEventListener('click', (e) => {
+          e.stopPropagation();
+          menu.classList.contains('open') ? closeMenu() : openMenu();
+        });
+        menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 768 && menu.classList.contains('open')) closeMenu();
+        });
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && menu.classList.contains('open')) closeMenu();
+        });
+      }
+
+      // ===== Active Nav Highlight on Scroll =====
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-desktop a:not(.btn-contact):not(.theme-toggle)');
+      
+      const highlightNav = () => {
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 150;
+          if (window.scrollY >= sectionTop) {
+            current = section.getAttribute('id');
+          }
+        });
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+        });
+      };
+      window.addEventListener('scroll', highlightNav, { passive: true });
+
+      // ===== Intersection Observer for Animations =====
+      const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -40px 0px' };
+      const animatedElements = document.querySelectorAll('.problem-card, .case-card, .testimonial-card, .price-card, .benefit-card, .step');
+
+      const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            fadeObserver.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      animatedElements.forEach(el => fadeObserver.observe(el));
+
+      // ===== Animate Stat Numbers =====
+      const animateValue = (element, start, end, duration) => {
+        const range = end - start;
+        const increment = range / (duration / 16);
+        let current = start;
+        const animate = () => {
+          current += increment;
+          if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
+            element.textContent = end % 1 === 0 ? end : end.toFixed(1);
+            return;
+          }
+          element.textContent = end % 1 === 0 ? Math.floor(current) : current.toFixed(1);
+          requestAnimationFrame(animate);
+        };
+        animate();
+      };
+
+      const statsContainer = document.querySelector('.stats-container');
+      if (statsContainer) {
+        const statsObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.querySelectorAll('.stat-number').forEach(stat => {
+                const target = parseFloat(stat.getAttribute('data-target'));
+                if (target) animateValue(stat, 0, target, 2000);
+              });
+              statsObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.5 });
+        statsObserver.observe(statsContainer);
+      }
+
+      // ===== Analytics Tracking =====
+      const trackConversion = (label) => {
+        console.log(`[Analytics] Conversion: ${label}`);
+      };
+
+      document.querySelectorAll('.btn-primary, .btn-contact, .sticky-mobile-cta').forEach(btn => {
+        btn.addEventListener('click', () => {
+          trackConversion(btn.textContent?.trim() || 'CTA click');
+        });
+      });
+
+    })();
+  </script>
+</body>
+</html>
